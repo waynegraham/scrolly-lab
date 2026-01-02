@@ -1,0 +1,20 @@
+{
+  "name": "scrolly-monorepo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.15.0",
+  "devDependencies": {
+    "turbo": "^2.7.2",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "@changesets/cli": "^2.29.8"
+  }
+}
