@@ -1,5 +1,5 @@
 {
-  "name": "scrolly-three",
+  "name": "@waynegraham/scrolly-three",
   "version": "0.1.0",
   "type": "module",
   "main": "./dist/index.cjs",
@@ -26,7 +26,7 @@
     "typescript": "^5.9.3",
     "vite": "^7.3.0",
     "vite-plugin-dts": "^4.5.4",
-    "scrolly": "^0.1.0"
+    "@waynegraham/scrolly": "^0.1.0"
   },
   "scripts": {
     "build": "vite build"
