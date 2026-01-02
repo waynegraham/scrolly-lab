@@ -1,7 +1,7 @@
 import { useRef, useMemo, Suspense } from 'react';
 import * as THREE from 'three';
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
-import { useTexture } from '@react-three/drei';
+import { Image } from '@react-three/drei';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
@@ -40,61 +40,8 @@ const fragmentShader = `
   }
 `;
 
-interface CylinderCarouselProps {
-    images: string[];
-}
-
-function CylinderCarousel({ images }: CylinderCarouselProps) {
-    const meshRef = useRef<THREE.Mesh>(null);
-    const textures = useTexture(images);
-    const { viewport } = useThree();
-
-    // Create a single large canvas texture from the input images
-    // This mimics the OGL data-texture approach but simplifies it for Three.js
-    const combinedTexture = useMemo(() => {
-        const canvas = document.createElement('canvas');
-        const ctx = canvas.getContext('2d');
-        const width = 1024;
-        const height = 1024; // Aspect ratio per image slot
-        const cols = images.length;
-
-        canvas.width = width * cols;
-        canvas.height = height;
-
-        if (ctx) {
-            images.forEach((_, i) => {
-                // For now, we'll just stripe colors or assume textures load.
-                // However, useTexture returns actual Texture objects.
-                // Mapping multiple textures to a cylinder requires strictly mapping UVs 
-                // or generating a sprite-sheet. 
-                // SIMPLIFICATION: We will create multiple mesh segments instead of one giant texture for stability.
-            });
-        }
-        return new THREE.CanvasTexture(canvas);
-    }, [images]);
-
-    // Alternative Approach: Render multiple planes arranged in a cylinder
-    // This is easier to manage in Three.js than a custom single-geometry shader for simple image lists.
-    const radius = 6;
-    const angleStep = (Math.PI * 2) / images.length;
-
-    return (
-        <group ref={meshRef}>
-            {images.map((src, i) => (
-                <ImagePlane
-                    key={i}
-                    src={src}
-                    index={i}
-                    total={images.length}
-                    radius={radius}
-                />
-            ))}
-        </group>
-    );
-}
 
 function ImagePlane({ src, index, total, radius }: { src: string, index: number, total: number, radius: number }) {
-    const texture = useTexture(src);
     const angle = (index / total) * Math.PI * 2;
 
     // Position on circle
@@ -104,10 +51,21 @@ function ImagePlane({ src, index, total, radius }: { src: string, index: number,
     const rotationY = angle;
 
     return (
-        <mesh position={[x, 0, z]} rotation={[0, rotationY, 0]}>
-            <planeGeometry args={[3, 2]} />
-            <meshBasicMaterial map={texture} side={THREE.DoubleSide} />
-        </mesh>
+        <group position={[x, 0, z]} rotation={[0, rotationY, 0]}>
+            {/* 
+                Drei Image component creates a textured plane.
+                - scale: [width, height, 1] or similar
+                - url: source
+                - transparent: defaults to false unless specified
+                - toneMapped: defaults to false (preserves colors)
+             */}
+            <Image
+                url={src}
+                scale={[3, 2]}
+                side={THREE.DoubleSide}
+                transparent
+            />
+        </group>
     );
 }
 
