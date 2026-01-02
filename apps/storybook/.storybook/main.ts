@@ -6,7 +6,8 @@ const config: StorybookConfig = {
     "../src/**/*.stories.@(ts|tsx|js|jsx|mdx)",
     "../src/**/*.mdx"
   ],
-  addons: ["@storybook/addon-docs"]
+  addons: ["@storybook/addon-docs"],
+  staticDirs: ['../public']
 };
 
 export default config;
