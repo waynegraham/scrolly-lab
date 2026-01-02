@@ -1,7 +1,27 @@
 {
   "tasks": {
-    "build": { "dependsOn": ["^build"], "outputs": ["dist/**", ".next/**", "out/**", "storybook-static/**"] },
-    "dev": { "cache": false },
-    "lint": {}
+    "build": {
+      "dependsOn": [
+        "^build"
+      ],
+      "outputs": [
+        "dist/**",
+        ".next/**",
+        "out/**",
+        "storybook-static/**"
+      ]
+    },
+    "dev": {
+      "cache": false
+    },
+    "lint": {},
+    "test": {
+      "dependsOn": [
+        "^build"
+      ],
+      "outputs": [
+        "coverage/**"
+      ]
+    }
   }
 }
