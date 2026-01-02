@@ -5,6 +5,8 @@ import { useGSAP } from '@gsap/react';
 
 gsap.registerPlugin(ScrollTrigger);
 
+// @see https://codepen.io/moussamamadou/pen/WbNepNG
+
 export interface CardParallaxItem {
     id: string;
     title: string;
