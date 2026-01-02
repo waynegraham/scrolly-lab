@@ -3,4 +3,5 @@ export { useScrollTimeline } from "./hooks/useScrollTimeline";
 export * from './components/PinnedStage';
 export * from './components/ParallaxHero';
 export * from './components/ScrollReveal';
+export * from './components/ImageMaskReveal';
 export { SplitTextLite } from "./text/SplitTextLite";
