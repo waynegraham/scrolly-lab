@@ -1,0 +1,47 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+
+<Meta title="Scrolly/Welcome" />
+
+# Welcome to Scrolly
+
+Scrolly is a small set of React helpers that wrap GSAP scroll animation patterns.
+It focuses on practical primitives like pinned stages and scroll-linked timelines.
+
+Links:
+- GitHub: https://github.com/waynegraham/scrolly-lab
+- NPM (not published yet): https://www.npmjs.com/package/@waynegraham/scrolly
+
+## Basic setup
+
+Install dependencies for the monorepo:
+
+```bash
+pnpm -w install
+```
+
+Build the package:
+
+```bash
+pnpm --filter @waynegraham/scrolly build
+```
+
+Use it in your app:
+
+```tsx
+import { PinnedStage, useScrollTimeline } from "@waynegraham/scrolly";
+```
+
+## Dependency notes
+
+- `@waynegraham/scrolly` ships with peer dependencies on `react`, `react-dom`,
+  `gsap`, and `@gsap/react`. Make sure those are installed in your consuming app.
+- The repo uses `pnpm` workspaces and is not published to npm yet, so local
+  development relies on workspace linking instead of a registry install.
+- Node.js 20+ and `pnpm@10.x` are required for the monorepo tooling.
+
+## Suggestions to make this easier to manage
+
+- Add `repository`, `homepage`, and `bugs` fields to `packages/scrolly/package.json`
+  so npm metadata and docs pages point to the right place when publishing.
+- Add a short "Publishing" section that documents the `changeset` workflow and
+  how peer dependency versions should be kept in sync with the docs app.
