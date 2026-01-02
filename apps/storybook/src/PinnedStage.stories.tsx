@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import React from "react";
-import { PinnedStage, SplitTextLite } from "scrolly";
+import { PinnedStage, SplitTextLite } from "@waynegraham/scrolly";
 
 const meta: Meta<typeof PinnedStage> = {
   title: "Scrolly/PinnedStage",

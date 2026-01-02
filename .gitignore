@@ -1,2 +1,15 @@
 node_modules/
-pnpm-lock.yaml
+**/.turbo/
+**/.next/
+**/out/
+**/dist/
+**/storybook-static/
+**/.vite/
+**/.vite-temp/
+**/.storybook/cache/
+**/tsconfig.tsbuildinfo
+**/*.log
+.env
+.env.*
+.DS_Store
+Thumbs.db

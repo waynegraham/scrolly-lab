@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { PinnedStage, SplitTextLite } from "scrolly";
+import { PinnedStage, SplitTextLite } from "@waynegraham/scrolly";
 
 export default function PinnedExample() {
   return (

@@ -1,6 +1,24 @@
 {
+  "name": "storybook",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
     "dev": "storybook dev -p 6006",
     "build": "storybook build"
+  },
+  "dependencies": {
+    "@gsap/react": "^2.1.2",
+    "@waynegraham/scrolly": "workspace:*",
+    "gsap": "^3.14.2",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3"
+  },
+  "devDependencies": {
+    "@storybook/react": "^10.1.11",
+    "@storybook/react-vite": "^10.1.11",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "storybook": "^10.1.11",
+    "typescript": "^5.9.3"
   }
 }

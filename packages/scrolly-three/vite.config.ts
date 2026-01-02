@@ -12,7 +12,15 @@ export default defineConfig({
       fileName: (f) => (f === "es" ? "index.mjs" : "index.cjs")
     },
     rollupOptions: {
-      external: ["react", "react-dom", "three", "@react-three/fiber", "@react-three/drei", "scrolly"]
+      external: [
+        "react",
+        "react-dom",
+        "three",
+        "@react-three/fiber",
+        "@react-three/drei",
+        "@waynegraham/scrolly",
+        "gsap"
+      ]
     }
   }
 });
