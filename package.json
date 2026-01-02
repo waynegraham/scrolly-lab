@@ -1,10 +1,16 @@
 {
   "name": "scrolly-monorepo",
-  "version": "1.0.0",
+  "private": true,
+  "version": "0.1.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "turbo dev",
+    "build": "turbo build",
+    "lint": "turbo lint",
+    "changeset": "changeset",
+    "version-packages": "changeset version",
+    "release": "changeset publish"
   },
   "keywords": [],
   "author": "",
@@ -14,7 +20,9 @@
     "turbo": "^2.7.2",
     "typescript": "^5.9.3"
   },
-  "dependencies": {
-    "@changesets/cli": "^2.29.8"
+  "devDependencies": {
+    "@changesets/cli": "^2.29.8",
+    "turbo": "^2.7.2",
+    "typescript": "^5.9.3"
   }
 }
