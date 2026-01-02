@@ -64,15 +64,20 @@ export const English: Story = {
 
 export const Arabic: Story = {
     args: {
-        backgroundImage: 'https://images.unsplash.com/photo-1548013146-72479768bada?ixlib=rb-1.2.1&auto=format&fit=crop&w=1952&q=80', // Desert landscape
+        // Desert landscape
+        backgroundImage: 'https://images.unsplash.com/photo-1548013146-72479768bada?ixlib=rb-1.2.1&auto=format&fit=crop&w=1952&q=80',
+
         height: '100vh',
         dir: 'rtl',
+
         children: (
             <SampleContent
                 title="التمرير المتوازي"
                 text="جرب عمق الويب مع تأثيرات التمرير المتوازي السلسة. أثناء التمرير، تتحرك الخلفية بسرعة مختلفة، مما يخلق شعوراً ثلاثي الأبعاد مذهلاً."
             />
         ),
+
+        speed: 0.9
     },
     decorators: [
         (Story) => (
