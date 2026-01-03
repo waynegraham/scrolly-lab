@@ -1,2 +1,2 @@
-export { useScrollProgress } from "./hooks/useScrollProgress";
-export * from './components/CinematicScroll';
+export { useScrollProgress } from './hooks/useScrollProgress';
+export { CinematicScroll } from './components/CinematicScroll';
