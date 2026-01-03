@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import gsap from "gsap";
-import { ensureGSAP } from "@waynegraham/scrolly";
+import { ensureGSAP } from "@wsgrah/scrolly";
 
 export function useScrollProgress(triggerEl: Element | null) {
   const [progress, setProgress] = useState(0);

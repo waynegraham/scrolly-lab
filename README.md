@@ -37,20 +37,20 @@ pnpm --filter storybook dev
 
 ## Packages
 
-### @waynegraham/scrolly
+### @wsgrah/scrolly
 
 Core package built with Vite. Outputs live in `packages/scrolly/dist`.
 
 ```bash
-pnpm --filter @waynegraham/scrolly build
+pnpm --filter @wsgrah/scrolly build
 ```
 
-### @waynegraham/scrolly-three
+### @wsgrah/scrolly-three
 
-Three.js helpers that depend on `@waynegraham/scrolly`.
+Three.js helpers that depend on `@wsgrah/scrolly`.
 
 ```bash
-pnpm --filter @waynegraham/scrolly-three build
+pnpm --filter @wsgrah/scrolly-three build
 ```
 
 ## Notes

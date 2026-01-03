@@ -18,7 +18,7 @@ export default defineConfig({
         "three",
         "@react-three/fiber",
         "@react-three/drei",
-        "@waynegraham/scrolly",
+        "@wsgrah/scrolly",
         "gsap"
       ]
     }
