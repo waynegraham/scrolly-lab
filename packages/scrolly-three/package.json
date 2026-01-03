@@ -1,6 +1,6 @@
 {
   "name": "@wsgrah/scrolly-three",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "React Three Fiber scroll-driven 3D animation components",
   "keywords": [
     "react",
@@ -44,7 +44,7 @@
   "peerDependencies": {
     "@react-three/drei": "^10.7.7",
     "@react-three/fiber": "^9.5.0",
-    "@wsgrah/scrolly": "^0.1.0",
+    "@wsgrah/scrolly": "^0.2.0",
     "gsap": "^3.14.2",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",

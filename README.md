@@ -35,6 +35,28 @@ pnpm --filter docs dev
 pnpm --filter storybook dev
 ```
 
+## Changesets
+
+Use Changesets to version and publish packages.
+
+Create a changeset:
+
+```bash
+pnpm changeset
+```
+
+Apply version bumps and update changelogs:
+
+```bash
+pnpm version-packages
+```
+
+Publish the packages:
+
+```bash
+pnpm release
+```
+
 ## Packages
 
 ### @wsgrah/scrolly
