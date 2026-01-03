@@ -11,7 +11,10 @@
     "test": "turbo test",
     "changeset": "changeset",
     "version-packages": "changeset version",
-    "release": "changeset publish"
+    "release": "changeset publish",
+    "publish:scrolly": "pnpm --filter @wsgrah/scrolly build && pnpm --filter @wsgrah/scrolly publish --access public",
+    "publish:scrolly-three": "pnpm --filter @wsgrah/scrolly-three build && pnpm --filter @wsgrah/scrolly-three publish --access public",
+    "publish:all": "pnpm build && pnpm --filter @wsgrah/scrolly publish --access public && pnpm --filter @wsgrah/scrolly-three publish --access public"
   },
   "files": [
     "dist",

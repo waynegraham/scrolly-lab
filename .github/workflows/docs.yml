@@ -1,4 +1,4 @@
-name: Deploy Docs (GitHub Pages)
+name: Deploy Storybook
 
 on:
   push:
@@ -12,7 +12,7 @@ permissions:
 
 concurrency:
   group: "pages"
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   build:
@@ -22,7 +22,7 @@ jobs:
 
       - uses: pnpm/action-setup@v3
         with:
-          version: 9
+          version: 10.27.0
 
       - uses: actions/setup-node@v4
         with:
@@ -30,17 +30,17 @@ jobs:
           cache: "pnpm"
 
       - run: pnpm install --frozen-lockfile
+      
+      # Build workspace packages first (required for storybook)
+      - run: pnpm --filter @wsgrah/scrolly build
+      - run: pnpm --filter @wsgrah/scrolly-three build
 
-      - name: Build docs
-        env:
-          NEXT_PUBLIC_BASE_PATH: "/${{ github.event.repository.name }}"
-        run: |
-          pnpm --filter docs build
-          ls -la apps/docs/out
+      # Build storybook
+      - run: pnpm --filter storybook build
 
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: apps/docs/out
+          path: ./apps/storybook/storybook-static
 
   deploy:
     environment:
@@ -49,5 +49,5 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
-      - uses: actions/deploy-pages@v4
-        id: deployment
+      - id: deployment
+        uses: actions/deploy-pages@v4
