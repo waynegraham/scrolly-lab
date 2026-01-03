@@ -57,4 +57,3 @@ pnpm --filter @wsgrah/scrolly-three build
 
 - This repo uses workspace dependencies (`workspace:*`) and is not published to npm yet.
 - Storybook is pinned to `@storybook/react` 10.1.11.
-

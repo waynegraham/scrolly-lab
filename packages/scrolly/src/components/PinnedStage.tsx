@@ -1,6 +1,6 @@
-import React, { PropsWithChildren, useEffect, useRef } from "react";
-import gsap from "gsap";
-import { useScrollTimeline, ScrollTimelineOptions } from "../hooks/useScrollTimeline";
+import React, { PropsWithChildren, useEffect, useRef } from 'react';
+import gsap from 'gsap';
+import { useScrollTimeline, ScrollTimelineOptions } from '../hooks/useScrollTimeline';
 
 type Props = PropsWithChildren<
   ScrollTimelineOptions & {
@@ -13,11 +13,11 @@ export function PinnedStage({
   children,
   className,
   stageClassName,
-  start = "top top",
-  end = "+=2000",
+  start = 'top top',
+  end = '+=2000',
   scrub = true,
   pin = true,
-  markers = false
+  markers = false,
 }: Props) {
   const stageRef = useRef<HTMLDivElement | null>(null);
   const { scope, timeline } = useScrollTimeline({ start, end, scrub, pin, markers });

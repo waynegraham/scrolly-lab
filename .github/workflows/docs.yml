@@ -11,7 +11,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: "pages"
+  group: 'pages'
   cancel-in-progress: false
 
 jobs:
@@ -27,10 +27,10 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: "pnpm"
+          cache: 'pnpm'
 
       - run: pnpm install --frozen-lockfile
-      
+
       # Build workspace packages first (required for storybook)
       - run: pnpm --filter @wsgrah/scrolly build
       - run: pnpm --filter @wsgrah/scrolly-three build

@@ -1,11 +1,13 @@
 # NPM Publishing Setup Guide
 
 ## Overview
+
 Your monorepo is configured to publish `@wsgrah/scrolly` and `@wsgrah/scrolly-three` packages to npm using Changesets and GitHub Actions with npm's Trusted Publishing (Provenance).
 
 ## Publishing Methods
 
 You can publish packages in two ways:
+
 1. **Automated via GitHub Actions** (recommended for releases)
 2. **Manual via CLI** (for testing or quick patches)
 
@@ -16,6 +18,7 @@ You can publish packages in two ways:
 ### Prerequisites
 
 #### 1. NPM Account Setup
+
 You need an npm account with access to publish under the `@wsgrah` scope.
 
 ```bash
@@ -66,6 +69,7 @@ The workflow uses [Changesets](https://github.com/changesets/changesets) to mana
 #### Step-by-Step Publishing Process
 
 ##### 1. Make Your Changes
+
 ```bash
 # Make code changes to packages/scrolly or packages/scrolly-three
 git add .
@@ -73,6 +77,7 @@ git commit -m "feat: add new component"
 ```
 
 ##### 2. Create a Changeset
+
 ```bash
 # Run the changeset CLI
 pnpm changeset
@@ -84,6 +89,7 @@ pnpm changeset
 ```
 
 **Example interaction:**
+
 ```
 🦋  Which packages would you like to include?
 ◯ changed packages
@@ -100,6 +106,7 @@ Added CardParallaxReveal component with stacking effect
 ```
 
 ##### 3. Commit the Changeset
+
 ```bash
 # Changesets creates a file in .changeset/
 git add .changeset
@@ -107,12 +114,15 @@ git commit -m "chore: add changeset for new component"
 ```
 
 ##### 4. Push to Main
+
 ```bash
 git push origin main
 ```
 
 ##### 5. Review Version PR
+
 The GitHub Action will automatically:
+
 - Create a PR titled **"Version Packages"**
 - Update package versions based on changesets
 - Generate/update CHANGELOG.md files
@@ -121,7 +131,9 @@ The GitHub Action will automatically:
 **Review the PR** to ensure versions and changelogs look correct.
 
 ##### 6. Publish to NPM
+
 When you **merge the "Version Packages" PR**, the GitHub Action will:
+
 - Build all packages
 - Publish to npm with provenance
 - Create git tags for the new versions
@@ -135,6 +147,7 @@ Use manual publishing for testing, quick patches, or when you need immediate con
 ### Prerequisites for Manual Publishing
 
 1. **npm login**: Ensure you're logged in
+
    ```bash
    npm whoami  # Verify you're logged in
    ```
@@ -187,6 +200,7 @@ Add these to your root `package.json`:
 ```
 
 Then run:
+
 ```bash
 pnpm publish:scrolly
 # or
@@ -208,6 +222,7 @@ npm version 0.2.0
 ```
 
 Or use changesets:
+
 ```bash
 pnpm changeset version  # Applies all changesets and updates versions
 ```
@@ -238,20 +253,24 @@ npm install @wsgrah/scrolly
 ## Troubleshooting
 
 ### "403 Forbidden" Error
+
 - Verify `NPM_TOKEN` is set correctly in GitHub secrets (for automated)
 - Ensure you're logged in with `npm whoami` (for manual)
 - Check you have publish access to `@wsgrah` scope
 - Verify your token has write permissions for the packages
 
 ### "Package not found" Error
+
 - Verify the scope `@wsgrah` exists on npm
 - You may need to create it first or request access
 
 ### Workflow Fails on Build
+
 - Check that all packages build locally: `pnpm build`
 - Review the GitHub Actions logs for specific errors
 
 ### "Classic Token Revoked" Error
+
 - npm has deprecated classic automation tokens
 - Use granular access tokens instead (see setup above)
 - Update your `NPM_TOKEN` secret in GitHub
@@ -259,11 +278,13 @@ npm install @wsgrah/scrolly
 ## Package Information
 
 ### @wsgrah/scrolly
+
 - **Description**: React scroll-driven animation components powered by GSAP
 - **Peer Dependencies**: React 19, GSAP 3.14+
 - **Entry Points**: ESM and CJS
 
 ### @wsgrah/scrolly-three
+
 - **Description**: React Three Fiber scroll-driven 3D animation components
 - **Peer Dependencies**: React 19, Three.js, React Three Fiber, @wsgrah/scrolly
 - **Entry Points**: ESM and CJS
@@ -271,6 +292,7 @@ npm install @wsgrah/scrolly
 ## Quick Reference
 
 ### Automated Publishing
+
 ```bash
 pnpm changeset                    # Create changeset
 git add .changeset && git commit  # Commit changeset
@@ -279,6 +301,7 @@ git push origin main              # Push to trigger workflow
 ```
 
 ### Manual Publishing
+
 ```bash
 pnpm build                                              # Build all packages
 pnpm --filter @wsgrah/scrolly publish --access public  # Publish scrolly

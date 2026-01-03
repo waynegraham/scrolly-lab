@@ -1,8 +1,10 @@
-export { ensureGSAP } from "./gsap/register";
-export { useScrollTimeline } from "./hooks/useScrollTimeline";
+export { ensureGSAP } from './gsap/register';
+export { useScrollTimeline } from './hooks/useScrollTimeline';
 export * from './components/PinnedStage';
 export * from './components/ParallaxHero';
-export * from './components/ScrollReveal';
-export * from './components/ImageMaskReveal';
-export * from './components/CardParallaxReveal';
-export { SplitTextLite } from "./text/SplitTextLite";
+export { ScrollReveal } from './components/ScrollReveal';
+export { ImageMaskReveal } from './components/ImageMaskReveal';
+export { CardParallaxReveal } from './components/CardParallaxReveal';
+export { GentlyScroll } from './components/GentlyScroll';
+export type { GentlyScrollItem, GentlyScrollProps } from './components/GentlyScroll';
+export { SplitTextLite } from './text/SplitTextLite';

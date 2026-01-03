@@ -1,0 +1,287 @@
+.container {
+  background-color: #001;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* Hero Section */
+.heroSection {
+  background-color: #000;
+  top: 0;
+}
+
+.heroContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 99vw;
+  height: 100vh;
+  position: relative;
+}
+
+.heroImageWrapper {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.heroImage {
+  filter: brightness(55%);
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.heroTexts {
+  color: #fff;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  width: 100%;
+  height: 100vh;
+  padding: 5rem 3.5vw 2.5rem;
+  font-size: 12vw;
+  line-height: 1;
+  position: relative;
+  font-weight: 400;
+}
+
+/* Work Section */
+.workSection {
+  position: relative;
+}
+
+.workContainer {
+  position: relative;
+}
+
+.workItem {
+  background-color: #000;
+  display: flex;
+  align-items: stretch;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.workItemContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: relative;
+}
+
+.workItemBackground {
+  aspect-ratio: 16 / 9;
+  filter: brightness(1);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.workItemBackground img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.workItemWrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: space-around;
+  align-items: stretch;
+  width: 100%;
+  padding: 5rem 4vw 2.5rem;
+  position: relative;
+}
+
+.workItemImages {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  position: absolute;
+  inset: 0% auto 0% 0%;
+}
+
+.workItemImage {
+  width: 21vw;
+  height: 100%;
+  position: relative;
+}
+
+.imageWrapper {
+  aspect-ratio: 4 / 5;
+  object-fit: fill;
+  background-color: rgba(255, 255, 255, 0.75);
+  width: 25vw;
+  padding: 0.35em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.imageWrapper img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.workText {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
+
+.workTextTitle {
+  color: #fff;
+  letter-spacing: 0.5rem;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: space-between;
+  align-items: stretch;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 12.5vw;
+  font-weight: 400;
+  line-height: 1;
+  position: relative;
+}
+
+.workItemOverlay {
+  z-index: 99;
+  opacity: 0;
+  pointer-events: none;
+  background-color: #000;
+  width: 105%;
+  height: 105%;
+  position: absolute;
+  inset: 0%;
+}
+
+/* Footer Section */
+.footerSection {
+  z-index: 1;
+  background-color: #000;
+  position: relative;
+}
+
+.footerContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 99vw;
+  height: 100vh;
+  position: relative;
+}
+
+.footerImageWrapper {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.footerImage {
+  opacity: 0.6;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.footerTexts {
+  color: #fff;
+  letter-spacing: 0.5rem;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  width: 100%;
+  height: 100%;
+  padding: 5rem 3.5vw 2.5rem;
+  font-size: 11.5vw;
+  font-weight: 400;
+  line-height: 1;
+  position: relative;
+}
+
+/* Ghost Container */
+.ghostWorkContainer {
+  position: relative;
+}
+
+.ghostWorkItem {
+  width: 100%;
+  height: 300vh;
+}
+
+/* Utility Classes */
+.sticky {
+  position: sticky;
+}
+
+.line {
+  will-change: transform;
+  position: relative;
+}
+
+.lineWrapper {
+  overflow: hidden;
+}
+
+.textCenter {
+  text-align: center;
+}
+
+.textRight {
+  text-align: right;
+}
+
+.textLeft {
+  text-align: left;
+}
+
+/* Responsive */
+@media screen and (max-width: 767px) {
+  .workItemImage {
+    width: 15vw;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .workText {
+    grid-column-gap: 2rem;
+    grid-row-gap: 2rem;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .workTextTitle {
+    font-size: 12.5vw;
+  }
+
+  .heroTexts {
+    grid-column-gap: 2rem;
+    grid-row-gap: 2rem;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .footerTexts {
+    font-size: 12.5vw;
+  }
+}

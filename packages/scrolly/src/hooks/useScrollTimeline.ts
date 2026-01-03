@@ -1,7 +1,7 @@
-import { useRef } from "react";
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
-import { ensureGSAP } from "../gsap/register";
+import { useRef } from 'react';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
+import { ensureGSAP } from '../gsap/register';
 
 export type ScrollTimelineOptions = {
   start?: string;
@@ -23,12 +23,12 @@ export function useScrollTimeline(options: ScrollTimelineOptions = {}) {
       timeline.current = gsap.timeline({
         scrollTrigger: {
           trigger: scope.current,
-          start: options.start ?? "top bottom",
-          end: options.end ?? "bottom top",
+          start: options.start ?? 'top bottom',
+          end: options.end ?? 'bottom top',
           scrub: options.scrub ?? true,
           pin: options.pin ?? false,
-          markers: options.markers ?? false
-        }
+          markers: options.markers ?? false,
+        },
       });
     },
     { scope }

@@ -1,15 +1,15 @@
-import type { Preview } from "@storybook/react";
+import type { Preview } from '@storybook/react';
 
 const preview: Preview = {
   parameters: {
-    actions: { argTypesRegex: "^on[A-Z].*" },
+    actions: { argTypesRegex: '^on[A-Z].*' },
     controls: { matchers: { color: /(background|color)$/i, date: /Date$/ } },
     options: {
       storySort: {
-        order: ["Scrolly", ["Welcome"]]
-      }
-    }
-  }
+        order: ['Scrolly', ['Welcome']],
+      },
+    },
+  },
 };
 
 export default preview;
