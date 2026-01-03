@@ -1,6 +1,31 @@
 {
-  "name": "@waynegraham/scrolly-three",
+  "name": "@wsgrah/scrolly-three",
   "version": "0.1.0",
+  "description": "React Three Fiber scroll-driven 3D animation components",
+  "keywords": [
+    "react",
+    "three",
+    "threejs",
+    "scroll",
+    "animation",
+    "gsap",
+    "react-three-fiber",
+    "3d"
+  ],
+  "author": "Wayne Graham",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/waynegraham/scrolly-lab.git",
+    "directory": "packages/scrolly-three"
+  },
+  "homepage": "https://github.com/waynegraham/scrolly-lab#readme",
+  "bugs": {
+    "url": "https://github.com/waynegraham/scrolly-lab/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
@@ -19,7 +44,7 @@
   "peerDependencies": {
     "@react-three/drei": "^10.7.7",
     "@react-three/fiber": "^9.5.0",
-    "@waynegraham/scrolly": "^0.1.0",
+    "@wsgrah/scrolly": "^0.1.0",
     "gsap": "^3.14.2",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
@@ -29,7 +54,7 @@
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^5.1.2",
-    "@waynegraham/scrolly": "workspace:*",
+    "@wsgrah/scrolly": "workspace:*",
     "typescript": "^5.9.3",
     "vite": "^7.3.0",
     "vite-plugin-dts": "^4.5.4"

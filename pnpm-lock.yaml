@@ -33,10 +33,10 @@ importers:
       '@react-three/fiber':
         specifier: ^9.5.0
         version: 9.5.0(@types/react@19.2.7)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(three@0.182.0)
-      '@waynegraham/scrolly':
+      '@wsgrah/scrolly':
         specifier: workspace:*
         version: link:../../packages/scrolly
-      '@waynegraham/scrolly-three':
+      '@wsgrah/scrolly-three':
         specifier: workspace:*
         version: link:../../packages/scrolly-three
       gsap:
@@ -79,10 +79,10 @@ importers:
       '@react-three/fiber':
         specifier: ^9.5.0
         version: 9.5.0(@types/react@19.2.7)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(three@0.182.0)
-      '@waynegraham/scrolly':
+      '@wsgrah/scrolly':
         specifier: workspace:*
         version: link:../../packages/scrolly
-      '@waynegraham/scrolly-three':
+      '@wsgrah/scrolly-three':
         specifier: workspace:*
         version: link:../../packages/scrolly-three
       gsap:
@@ -187,7 +187,7 @@ importers:
       '@vitejs/plugin-react':
         specifier: ^5.1.2
         version: 5.1.2(vite@7.3.0(@types/node@25.0.3))
-      '@waynegraham/scrolly':
+      '@wsgrah/scrolly':
         specifier: workspace:*
         version: link:../scrolly
       typescript:

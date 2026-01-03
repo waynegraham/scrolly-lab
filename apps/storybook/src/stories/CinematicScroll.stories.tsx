@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { CinematicScroll } from '@waynegraham/scrolly-three';
+import { CinematicScroll } from '@wsgrah/scrolly-three';
 
 const meta: Meta<typeof CinematicScroll> = {
     title: 'Scrolly Three/CinematicScroll',

@@ -9,7 +9,7 @@ It focuses on practical primitives like pinned stages and scroll-linked timeline
 
 Links:
 - GitHub: https://github.com/waynegraham/scrolly-lab
-- NPM (not published yet): https://www.npmjs.com/package/@waynegraham/scrolly
+- NPM (not published yet): https://www.npmjs.com/package/@wsgrah/scrolly
 
 ## Basic setup
 
@@ -22,18 +22,18 @@ pnpm -w install
 Build the package:
 
 ```bash
-pnpm --filter @waynegraham/scrolly build
+pnpm --filter @wsgrah/scrolly build
 ```
 
 Use it in your app:
 
 ```tsx
-import { PinnedStage, useScrollTimeline } from "@waynegraham/scrolly";
+import { PinnedStage, useScrollTimeline } from "@wsgrah/scrolly";
 ```
 
 ## Dependency notes
 
-- `@waynegraham/scrolly` ships with peer dependencies on `react`, `react-dom`,
+- `@wsgrah/scrolly` ships with peer dependencies on `react`, `react-dom`,
   `gsap`, and `@gsap/react`. Make sure those are installed in your consuming app.
 - The repo uses `pnpm` workspaces and is not published to npm yet, so local
   development relies on workspace linking instead of a registry install.

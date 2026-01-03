@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { CardParallaxReveal } from '@waynegraham/scrolly';
+import { CardParallaxReveal } from '@wsgrah/scrolly';
 
 const meta: Meta<typeof CardParallaxReveal> = {
     title: 'Scrolly/CardParallaxReveal',

@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ScrollReveal } from '@waynegraham/scrolly';
+import { ScrollReveal } from '@wsgrah/scrolly';
 
 const meta: Meta<typeof ScrollReveal> = {
     title: 'Scrolly/ScrollReveal',

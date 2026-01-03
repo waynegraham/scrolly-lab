@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ParallaxHero } from '@waynegraham/scrolly';
+import { ParallaxHero } from '@wsgrah/scrolly';
 
 const meta: Meta<typeof ParallaxHero> = {
     title: 'Scrolly/ParallaxHero',

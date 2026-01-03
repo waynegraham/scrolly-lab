@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ImageMaskReveal } from '@waynegraham/scrolly';
+import { ImageMaskReveal } from '@wsgrah/scrolly';
 
 const meta: Meta<typeof ImageMaskReveal> = {
     title: 'Scrolly/ImageMaskReveal',

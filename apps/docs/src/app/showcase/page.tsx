@@ -1,9 +1,9 @@
 "use client";
 
-import { ParallaxHero, ImageMaskReveal, CardParallaxReveal } from "@waynegraham/scrolly";
+import { ParallaxHero, ImageMaskReveal, CardParallaxReveal } from "@wsgrah/scrolly";
 // Note: CinematicScroll is in scrolly-three, need to import from there or ensure it's exported if moved.
-// Based on previous work, CinematicScroll is in @waynegraham/scrolly-three.
-import { CinematicScroll } from "@waynegraham/scrolly-three";
+// Based on previous work, CinematicScroll is in @wsgrah/scrolly-three.
+import { CinematicScroll } from "@wsgrah/scrolly-three";
 
 export default function ShowcasePage() {
     return (
