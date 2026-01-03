@@ -16,7 +16,17 @@
     "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,json,md,yml}\"",
     "publish:scrolly": "pnpm --filter @wsgrah/scrolly build && pnpm --filter @wsgrah/scrolly publish --access public",
     "publish:scrolly-three": "pnpm --filter @wsgrah/scrolly-three build && pnpm --filter @wsgrah/scrolly-three publish --access public",
-    "publish:all": "pnpm build && pnpm --filter @wsgrah/scrolly publish --access public && pnpm --filter @wsgrah/scrolly-three publish --access public"
+    "publish:all": "pnpm build && pnpm --filter @wsgrah/scrolly publish --access public && pnpm --filter @wsgrah/scrolly-three publish --access public",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,md,yml}": [
+      "prettier --write"
+    ]
   },
   "files": [
     "dist",
@@ -36,6 +46,8 @@
     "eslint": "^9.39.2",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^7.0.1",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.7",
     "prettier": "^3.7.4",
     "turbo": "^2.7.2",
     "typescript": "^5.9.3"
