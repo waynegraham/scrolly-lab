@@ -2,6 +2,7 @@ import React, { PropsWithChildren, useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { useScrollTimeline, ScrollTimelineOptions } from '../hooks/useScrollTimeline';
 
+/** Props for PinnedStage, combining scroll timeline options with styling hooks. */
 type Props = PropsWithChildren<
   ScrollTimelineOptions & {
     className?: string;
@@ -9,6 +10,10 @@ type Props = PropsWithChildren<
   }
 >;
 
+/**
+ * Pin a stage element and animate it in/out using a shared ScrollTrigger timeline.
+ * The wrapper provides the scroll scope, and the inner stage is animated by GSAP.
+ */
 export function PinnedStage({
   children,
   className,

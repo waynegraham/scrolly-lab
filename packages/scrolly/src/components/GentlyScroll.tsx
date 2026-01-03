@@ -9,12 +9,14 @@ gsap.registerPlugin(ScrollTrigger);
 
 type LineAlign = 'left' | 'center' | 'right';
 
+/** Per-line text model with optional alignment and color overrides. */
 export interface GentlyScrollLine {
   text: string;
   align?: LineAlign;
   color?: string;
 }
 
+/** Props for the fixed reference button rendered in the corner. */
 export interface GentlyScrollReferenceLink {
   href: string;
   label: string;
@@ -23,11 +25,13 @@ export interface GentlyScrollReferenceLink {
   rel?: string;
 }
 
+/** Simple nav link model for the fixed top bar. */
 export interface GentlyScrollNavLink {
   href: string;
   label: string;
 }
 
+/** Content model for each scroll-driven work item. */
 export interface GentlyScrollItem {
   id: string;
   title: Array<string | GentlyScrollLine>;
@@ -37,6 +41,7 @@ export interface GentlyScrollItem {
   accentColor?: string;
 }
 
+/** Props for the GentlyScroll component layout and content. */
 export interface GentlyScrollProps {
   heroImage: string;
   heroTitle: Array<string | GentlyScrollLine>;
@@ -48,6 +53,10 @@ export interface GentlyScrollProps {
   navLabel?: string;
 }
 
+/**
+ * Scroll-driven hero/work/footer layout inspired by the CodePen demo.
+ * Uses fixed layers, ghost spacers, and GSAP ScrollTrigger for timing.
+ */
 export function GentlyScroll({
   heroImage,
   heroTitle,

@@ -5,19 +5,24 @@ import { useGSAP } from '@gsap/react';
 
 gsap.registerPlugin(ScrollTrigger);
 
+/** Props for the ScrollReveal component. */
 export interface ScrollRevealProps {
-  /** Content to be revealed */
+  /** Content to be revealed. */
   children: ReactNode;
-  /** Opacity when the content is at the edges of the viewport (default: 0.7) */
+  /** Opacity when the content is at the edges of the viewport (default: 0.7). */
   fromOpacity?: number;
-  /** Opacity when the content is in the center of the viewport (default: 0) */
+  /** Opacity when the content is in the center of the viewport (default: 0). */
   toOpacity?: number;
-  /** Color of the overlay (default: "black") */
+  /** Color of the overlay (default: "black"). */
   overlayColor?: string;
-  /** Text direction for RTL support */
+  /** Text direction for RTL support. */
   dir?: 'ltr' | 'rtl';
 }
 
+/**
+ * Adds a scroll-synced overlay that fades out at the center of the viewport
+ * and fades back in as the content exits.
+ */
 export function ScrollReveal({
   children,
   fromOpacity = 0.7,

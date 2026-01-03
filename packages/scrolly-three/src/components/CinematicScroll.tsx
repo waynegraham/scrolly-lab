@@ -11,7 +11,7 @@ import { useGSAP } from '@gsap/react';
 gsap.registerPlugin(ScrollTrigger);
 
 // --- Vertex Shader ---
-// Calculates the position of vertices and passes UVs to the fragment shader.
+/** Vertex shader that forwards UVs and projects vertices into clip space. */
 const vertexShader = `
   varying vec2 vUv;
   void main() {
@@ -20,9 +20,7 @@ const vertexShader = `
   }
 `;
 
-// --- Fragment Shader ---
-// Maps the texture and applies a darkening effect based on rotation/depth.
-// This gives the "cinematic" fade as items rotate away.
+/** Fragment shader that samples a texture and outputs its color. */
 const fragmentShader = `
   uniform sampler2D uTexture;
   varying vec2 vUv;
@@ -40,6 +38,10 @@ const fragmentShader = `
   }
 `;
 
+/**
+ * Renders a textured plane placed on a circle around the origin.
+ * Each plane faces the center so rotation feels cinematic.
+ */
 function ImagePlane({
   src,
   index,
@@ -73,7 +75,7 @@ function ImagePlane({
   );
 }
 
-// --- Main Scene Component ---
+/** Main scroll container that hosts the Three.js canvas. */
 export function CinematicScroll({ images }: { images: string[] }) {
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -113,6 +115,9 @@ export function CinematicScroll({ images }: { images: string[] }) {
   );
 }
 
+/**
+ * Updates the carousel rotation based on scroll position and renders planes.
+ */
 function SceneController({ images }: { images: string[] }) {
   const groupRef = useRef<THREE.Group>(null);
 

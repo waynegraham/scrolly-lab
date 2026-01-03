@@ -5,19 +5,24 @@ import { useGSAP } from '@gsap/react';
 
 gsap.registerPlugin(ScrollTrigger);
 
+/** Props for the ParallaxHero component. */
 export interface ParallaxHeroProps {
-  /** URL of the background image */
+  /** URL of the background image. */
   backgroundImage: string;
-  /** Height of the hero section */
+  /** Height of the hero section. */
   height?: string;
-  /** Parallax speed factor (0 = no movement, 1 = fixed, < 1 = slower than scroll) */
+  /** Parallax speed factor (0 = no movement, 1 = fixed, < 1 = slower than scroll). */
   speed?: number;
-  /** Content to display in the foreground */
+  /** Content to display in the foreground. */
   children?: ReactNode;
-  /** Text direction for RTL support */
+  /** Text direction for RTL support. */
   dir?: 'ltr' | 'rtl';
 }
 
+/**
+ * Full-width hero that moves its background at a slower rate than scroll.
+ * Uses GSAP ScrollTrigger to keep the foreground content stable.
+ */
 export function ParallaxHero({
   backgroundImage,
   height = '100vh',

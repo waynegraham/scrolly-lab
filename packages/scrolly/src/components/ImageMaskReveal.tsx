@@ -5,6 +5,7 @@ import { useGSAP } from '@gsap/react';
 
 gsap.registerPlugin(ScrollTrigger);
 
+/** Content model for each masked image section. */
 export interface ImageMaskRevealItem {
   id: string;
   title: string;
@@ -16,11 +17,16 @@ export interface ImageMaskRevealItem {
   linkUrl?: string;
 }
 
+/** Props for the split-layout image mask reveal component. */
 export interface ImageMaskRevealProps {
   items: ImageMaskRevealItem[];
   dir?: 'ltr' | 'rtl';
 }
 
+/**
+ * Split layout that pins images on desktop and reveals them via mask transitions.
+ * On mobile, uses a stacked layout with scroll-driven parallax and color shifts.
+ */
 export function ImageMaskReveal({ items, dir = 'ltr' }: ImageMaskRevealProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const leftColRef = useRef<HTMLDivElement>(null);

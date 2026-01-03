@@ -7,6 +7,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 // @see https://codepen.io/moussamamadou/pen/WbNepNG
 
+/** Data model for a single parallax card. */
 export interface CardParallaxItem {
   id: string;
   title: string;
@@ -16,10 +17,15 @@ export interface CardParallaxItem {
   metadata?: { label: string; value: string }[];
 }
 
+/** Props for the card-stacking parallax reveal component. */
 export interface CardParallaxRevealProps {
   items: CardParallaxItem[];
 }
 
+/**
+ * Scroll-driven parallax stack that reveals cards using clip-path wipes
+ * and optional floating video panels.
+ */
 export function CardParallaxReveal({ items }: CardParallaxRevealProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const fixedContainerRef = useRef<HTMLDivElement>(null);
